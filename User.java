@@ -51,7 +51,7 @@ public class User {
      */
     public boolean follows(String name) {
         //// Replace the following statement with your code
-        name = name.toLowerCase(); 
+        name = name.toLowerCase();
         for (int i = 0; i < fCount; i++) {
             if (follows[i].toLowerCase().equals(name)) {
                 return true;
@@ -84,9 +84,9 @@ public class User {
      */
     public boolean removeFollowee(String name) {
         //// Replace the following statement with your code
-        for (int i = 0; i <follows.length; i++) {
+        for (int i = 0; i < follows.length; i++) {
             if (follows[i].equals(name)) {
-                for (int j = i; j < follows.length-1; j++) {
+                for (int j = i; j < follows.length - 1; j++) {
                     follows[j] = follows[j + 1];
                 }
                 fCount--;
@@ -102,7 +102,13 @@ public class User {
      */
     public int countMutual(User other) {
         //// Replace the following statement with your code
-        return 0;
+        int count = 0;
+        for (int i = 0; i < fCount; i++) {
+            if (other.follows(follows[i])) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /**
