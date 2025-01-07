@@ -68,7 +68,7 @@ public class User {
     public boolean addFollowee(String name) {
         //// Replace the following statement with your code
         for (int i = 0; i < follows.length; i++) {
-            if (follows[i] == name || fCount == maxfCount) {
+            if (this.follows[i] == name || fCount == maxfCount) {
                 return false;
             }
         }
