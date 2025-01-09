@@ -79,11 +79,11 @@ public class Network {
         //// Replace the following statement with your code
         User user1 = getUser(name1);
         User user2 = getUser(name2);
-        if (this.getUser(name1) == null || this.getUser(name1) == null ) {
+        if (this.getUser(name1) == null || this.getUser(name1) == null ||name1 == null || name2 == null || name1.equals(name2)) {
             return false;
 
         }
-        if (user1.equals(user2)) {
+        if (user1.follows(name2)) {
             return false;
         }
         if (user1.addFollowee(name2)) {
