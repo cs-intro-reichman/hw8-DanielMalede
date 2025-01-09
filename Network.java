@@ -142,13 +142,24 @@ public class Network {
      */
     private int followeeCount(String name) {
         //// Replace the following statement with your code
-        return 0;
+        int count = 0;
+        for (int i = 0; i < userCount; i++) {
+            if (users[i].follows(name)) {
+                count++;
+            }
+        }
+
+        return count;
     }
 
     // Returns a textual description of all the users in this network, and who they
     // follow.
     public String toString() {
         //// Replace the following statement with your code
-        return null;
+        String ans = "Network:";
+        for (int i = 0; i < userCount; i++) {
+            ans += "\n" + users[i].toString();
+        }
+        return ans;
     }
 }
