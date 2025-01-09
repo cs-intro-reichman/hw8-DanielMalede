@@ -121,6 +121,9 @@ public class Network {
         //// Replace the following statement with your code
         User mostPopular = null;
         int maxCount = 0;
+        if (userCount == 0) {
+            return null;
+        }
         for (int i = 0; i < userCount; i++) {
             mostPopular = users[i];
             int count = followeeCount(users[i].getName());
@@ -129,10 +132,7 @@ public class Network {
                 mostPopular = users[i];
             }
         }
-        if (mostPopular != null) {
-            return mostPopular.getName();
-        }
-        return null;
+        return mostPopular.getName();
     }
 
     /**
