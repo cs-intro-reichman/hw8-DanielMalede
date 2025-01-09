@@ -82,7 +82,11 @@ public class Network {
             return false;
 
         }
-        if (user1.addFollowee(name2) && !user1.follows(name2)) {
+        if (user1.follows(name2)) {
+            return false;
+            
+        }
+        if (user1.addFollowee(name2)) {
             return true;
         }
         return false;
@@ -97,10 +101,17 @@ public class Network {
     public String recommendWhoToFollow(String name) {
         //// Replace the following statement with your code
         User user = getUser(name);
-     
-
-        return null;
-    }
+        int maxCount = 0;
+        String recommended = null;
+        for (int i = 0; i < userCount; i++) {
+            int count = user.countMutual(users[i]);
+            if (count > maxCount) {
+                maxCount = count;
+                recommended = users[i].getName();
+            }
+        }
+        return recommended;
+         }
 
     /**
      * Computes and returns the name of the most popular user in this network:
