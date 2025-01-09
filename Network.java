@@ -123,7 +123,7 @@ public class Network {
         if (userCount == 0) {
             return null;
         }
-        for (int i = 0; i < userCount; i++) {
+        for (int i = 1; i < userCount; i++) {
             mostPopular = users[i];
             if (followeeCount(users[i].getName()) > followeeCount(mostPopular.getName())) {
                 mostPopular = users[i];
