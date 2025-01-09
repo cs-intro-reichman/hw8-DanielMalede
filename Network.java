@@ -56,7 +56,7 @@ public class Network {
      */
     public boolean addUser(String name) {
         //// Replace the following statement with your code
-        if (userCount == 1000) {
+        if (userCount == users.length) {
             return false;
         }
         for (int i = 0; i < userCount; i++) {
