@@ -124,9 +124,9 @@ public class Network {
             return null;
         }
         for (int i = 1; i < userCount; i++) {
-            mostPopular = users[i];
+            User iUser = users[i];
             if (followeeCount(users[i].getName()) > followeeCount(mostPopular.getName())) {
-                mostPopular = users[i];
+                mostPopular = iUser;
             }
         }
         return mostPopular.getName();
