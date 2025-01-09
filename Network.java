@@ -101,6 +101,9 @@ public class Network {
         int maxCount = 0;
         String recommended = null;
         for (int i = 0; i < userCount; i++) {
+            if (users[i].getName().equals(name)) {
+                continue;
+            }
             int count = user.countMutual(users[i]);
             if (count > maxCount) {
                 maxCount = count;
