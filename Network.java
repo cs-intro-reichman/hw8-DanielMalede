@@ -79,9 +79,13 @@ public class Network {
         //// Replace the following statement with your code
         User user1 = getUser(name1);
         User user2 = getUser(name2);
-        if (this.getUser(name1) == null || this.getUser(name1) == null || user1.equals(user2)) {
+        if (this.getUser(name1) == null || this.getUser(name1) == null ) {
             return false;
 
+        }
+        if (user1.equals(name2)) {
+            return false;
+            
         }
         if (user1.addFollowee(name2)) {
             return true;
@@ -108,7 +112,7 @@ public class Network {
             }
         }
         return recommended;
-         }
+    }
 
     /**
      * Computes and returns the name of the most popular user in this network:
