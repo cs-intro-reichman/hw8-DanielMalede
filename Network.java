@@ -77,6 +77,14 @@ public class Network {
      */
     public boolean addFollowee(String name1, String name2) {
         //// Replace the following statement with your code
+        User user1 = getUser(name1);
+        if (this.getUser(name1) == null || this.getUser(name2) == null) {
+            return false;
+
+        }
+        if (user1.addFollowee(name2)) {
+            return true;
+        }
         return false;
     }
 
@@ -88,6 +96,9 @@ public class Network {
      */
     public String recommendWhoToFollow(String name) {
         //// Replace the following statement with your code
+        User user = getUser(name);
+     
+
         return null;
     }
 
@@ -97,6 +108,13 @@ public class Network {
      */
     public String mostPopularUser() {
         //// Replace the following statement with your code
+        User mostPopular = null;
+        int maxCount = 0;
+        for (int i = 0; i < userCount; i++) {
+            mostPopular = users[i];
+
+        }
+
         return null;
     }
 
