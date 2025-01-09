@@ -78,15 +78,15 @@ public class Network {
     public boolean addFollowee(String name1, String name2) {
         //// Replace the following statement with your code
         User user1 = getUser(name1);
-        if (getUser(name1) == null || getUser(name1) == null || name1 == null || name2 == null || name1.equals(name2)) {
+        User user2 = getUser(name2);
+        if (user1 == null || user2 == null || name1 == null || name2 == null || name1.equals(name2)) {
             return false;
 
         }
         if (user1.follows(name2)) {
             return false;
         }
-        user1.addFollowee(name2);
-        return true;
+        return user1.addFollowee(name2);
     }
 
     /**
