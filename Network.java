@@ -120,7 +120,7 @@ public class Network {
     public String mostPopularUser() {
         //// Replace the following statement with your code
         User mostPopular = null;
-        int maxCount = 0;
+        int maxCount = -1;
         if (userCount == 0) {
             return null;
         }
