@@ -82,7 +82,7 @@ public class Network {
             return false;
 
         }
-        if (user1.addFollowee(name2)) {
+        if (user1.addFollowee(name2) && !user1.follows(name2)) {
             return true;
         }
         return false;
